@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heavyweight t-skjorter – forhåndsbestilling</title>
+<meta name="description" content="Vi selger Pro Club heavyweight t-skjorter i Norge. Forhåndsbestill svart eller hvit, S–XXL, 349 kr.">
+<style>
+  :root { --bg:#f6f5f2; --fg:#151515; --muted:#666; --line:#d9d6cf; --accent:#151515; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:560px; margin:0 auto; padding:24px 16px 48px; }
+  h1 { font-size:2rem; line-height:1.15; margin:8px 0 4px; letter-spacing:-.02em; }
+  .pris { font-size:1.5rem; font-weight:700; margin:0 0 12px; }
+  .lead { color:var(--muted); margin:0 0 20px; }
+  .tees { display:flex; gap:12px; justify-content:center; margin:8px 0 20px; }
+  .tees svg { width:46%; max-width:200px; height:auto; }
+  ul.fakta { padding-left:20px; margin:0 0 24px; }
+  form { background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px 16px; }
+  fieldset { border:0; margin:0 0 16px; padding:0; }
+  legend, label.t { display:block; font-weight:600; margin-bottom:6px; }
+  .valg { display:flex; flex-wrap:wrap; gap:8px; }
+  .valg input { position:absolute; opacity:0; }
+  .valg label { border:1px solid var(--line); border-radius:8px; padding:10px 14px; min-width:56px; text-align:center; cursor:pointer; }
+  .valg input:checked + label { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .valg input:focus-visible + label { outline:2px solid #3a6ff7; outline-offset:2px; }
+  input[type=text], input[type=email], input[type=number] { width:100%; font:inherit; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:#fff; color:inherit; }
+  .felt { margin-bottom:14px; }
+  button { width:100%; font:inherit; font-weight:700; padding:14px; border:0; border-radius:10px; background:var(--accent); color:#fff; cursor:pointer; }
+  .liten { font-size:.85rem; color:var(--muted); }
+  #takk { display:none; background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px; margin-top:16px; }
+  footer { margin-top:32px; font-size:.85rem; color:var(--muted); border-top:1px solid var(--line); padding-top:16px; }
+  footer h2 { font-size:.95rem; color:var(--fg); margin:16px 0 4px; }
+</style>
+</head>
+<body>
+<main>
+  <p class="liten">Vi selger Pro Club i Norge</p>
+  <h1>Heavyweight t-skjorte</h1>
+  <p class="pris">349 kr</p>
+  <p class="lead">Den tykke, klassiske skjorta med stiv krage som holder formen. Nå kan du forhåndsbestille den her i Norge, uten frakt og toll fra USA.</p>
+
+  <div class="tees" aria-hidden="true">
+    <svg viewBox="0 0 200 200"><path d="M70 20 L40 32 L8 64 L32 92 L52 78 L52 184 L148 184 L148 78 L168 92 L192 64 L160 32 L130 20 Q100 44 70 20 Z" fill="#1b1b1b"/></svg>
+    <svg viewBox="0 0 200 200"><path d="M70 20 L40 32 L8 64 L32 92 L52 78 L52 184 L148 184 L148 78 L168 92 L192 64 L160 32 L130 20 Q100 44 70 20 Z" fill="#fff" stroke="#bbb" stroke-width="2"/></svg>
+  </div>
+
+  <ul class="fakta">
+    <li>Originale Pro Club heavyweight short sleeve</li>
+    <li>Svart eller hvit, størrelse S–XXL</li>
+    <li>Forhåndsbestillingen er <strong>uforpliktende</strong>. Du betaler ingenting nå.</li>
+    <li>Når skjortene er på lager, får du en e-post med betaling (Vipps) og levering.</li>
+  </ul>
+
+  <form id="bestill">
+    <fieldset>
+      <legend>Farge</legend>
+      <div class="valg">
+        <input type="radio" name="farge" id="f-svart" value="Svart" required><label for="f-svart">Svart</label>
+        <input type="radio" name="farge" id="f-hvit" value="Hvit"><label for="f-hvit">Hvit</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Størrelse</legend>
+      <div class="valg">
+        <input type="radio" name="str" id="s-s" value="S" required><label for="s-s">S</label>
+        <input type="radio" name="str" id="s-m" value="M"><label for="s-m">M</label>
+        <input type="radio" name="str" id="s-l" value="L"><label for="s-l">L</label>
+        <input type="radio" name="str" id="s-xl" value="XL"><label for="s-xl">XL</label>
+        <input type="radio" name="str" id="s-xxl" value="XXL"><label for="s-xxl">XXL</label>
+      </div>
+    </fieldset>
+    <div class="felt"><label class="t" for="antall">Antall</label><input type="number" id="antall" name="antall" min="1" max="20" value="1" required></div>
+    <div class="felt"><label class="t" for="navn">Navn</label><input type="text" id="navn" name="navn" autocomplete="name" required></div>
+    <div class="felt"><label class="t" for="epost">E-post</label><input type="email" id="epost" name="epost" autocomplete="email" required></div>
+    <button type="submit">Forhåndsbestill</button>
+    <p class="liten">Knappen åpner e-posten din med bestillingen ferdig utfylt. Trykk send der. Vi bruker opplysningene bare til å følge opp bestillingen din.</p>
+  </form>
+  <div id="takk" role="status">Takk! Send e-posten som åpnet seg, så er du på lista. Åpnet den seg ikke? Send farge, størrelse og antall til <a href="mailto:magnus@lettmateriell.no">magnus@lettmateriell.no</a>.</div>
+
+  <footer>
+    <h2>Om forhåndsbestilling</h2>
+    <p>Dette er en uforpliktende interessemelding, ikke et kjøp. Vi bestiller skjortene fra USA når nok forhåndsbestillinger er inne, og gir deg beskjed om levering. Du kan når som helst trekke deg.</p>
+    <h2>Angrerett og levering</h2>
+    <p>Når du kjøper, har du 14 dagers angrerett etter at du har mottatt varen (angrerettloven), og vanlig reklamasjonsrett. Levering med Posten eller Helthjem. Fraktprisen får du oppgitt før du betaler.</p>
+    <h2>Selger</h2>
+    <p>Lettmateriell Ramberg (enkeltpersonforetak), org.nr. 938 774 358<br>Johnny Svorkmos vei 60, 0983 Oslo<br><a href="mailto:magnus@lettmateriell.no">magnus@lettmateriell.no</a></p>
+    <p>Pro Club er et registrert varemerke som tilhører eieren. Vi er en uavhengig forhandler og har ingen tilknytning til Pro Club.</p>
+  </footer>
+</main>
+<script>
+  // shortcut: e-post via mailto, ingen database. Bytt til et skjema med lagring (f.eks. Formspree) hvis mange bestiller.
+  document.getElementById('bestill').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const f = new FormData(this);
+    const tekst = `Forhåndsbestilling\n\nFarge: ${f.get('farge')}\nStørrelse: ${f.get('str')}\nAntall: ${f.get('antall')}\nNavn: ${f.get('navn')}\nE-post: ${f.get('epost')}`;
+    location.href = 'mailto:magnus@lettmateriell.no?subject=' + encodeURIComponent(`Forhåndsbestilling ${f.get('farge')} ${f.get('str')} x${f.get('antall')}`) + '&body=' + encodeURIComponent(tekst);
+    document.getElementById('takk').style.display = 'block';
+  });
+</script>
+</body>
+</html>
