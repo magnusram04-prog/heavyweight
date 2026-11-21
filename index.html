@@ -37,7 +37,7 @@
 <main>
   <p class="liten">Vi selger Pro Club i Norge</p>
   <h1>Heavyweight t-skjorte</h1>
-  <p class="pris">349 kr</p>
+  <p class="pris">349 kr <span class="liten">· 3 stk. 749 kr</span></p>
   <p class="lead">Den tykke, klassiske skjorta med stiv krage som holder formen. Nå kan du forhåndsbestille den her i Norge, uten frakt og toll fra USA.</p>
 
   <div class="tees" aria-hidden="true">
@@ -47,12 +47,22 @@
 
   <ul class="fakta">
     <li>Originale Pro Club heavyweight short sleeve</li>
+    <li>På lager i Norge: ingen toll, ingen venting på pakke fra USA, Vipps og retur i Norge</li>
+    <li>Passform: romslig kropp, men noen synes halsen sitter tett. Er du i tvil, ta en størrelse opp.</li>
     <li>Svart eller hvit, størrelse S–XXL</li>
     <li>Forhåndsbestillingen er <strong>uforpliktende</strong>. Du betaler ingenting nå.</li>
     <li>Når skjortene er på lager, får du en e-post med betaling (Vipps) og levering.</li>
   </ul>
 
   <form id="bestill">
+    <fieldset>
+      <legend>Pakke</legend>
+      <div class="valg">
+        <input type="radio" name="pakke" id="p-3" value="3-pakning (749 kr)" checked><label for="p-3">3 stk. – 749 kr</label>
+        <input type="radio" name="pakke" id="p-1" value="1 stk. (349 kr)"><label for="p-1">1 stk. – 349 kr</label>
+      </div>
+      <p class="liten">3-pakning: 250 kr per skjorte, du sparer 298 kr. Vil du blande farger eller størrelser, skriv det i e-posten.</p>
+    </fieldset>
     <fieldset>
       <legend>Farge</legend>
       <div class="valg">
@@ -70,7 +80,16 @@
         <input type="radio" name="str" id="s-xxl" value="XXL"><label for="s-xxl">XXL</label>
       </div>
     </fieldset>
-    <div class="felt"><label class="t" for="antall">Antall</label><input type="number" id="antall" name="antall" min="1" max="20" value="1" required></div>
+    <fieldset>
+      <legend>Land</legend>
+      <div class="valg">
+        <input type="radio" name="land" id="l-no" value="Norge" checked><label for="l-no">Norge</label>
+        <input type="radio" name="land" id="l-se" value="Sverige"><label for="l-se">Sverige</label>
+        <input type="radio" name="land" id="l-dk" value="Danmark"><label for="l-dk">Danmark</label>
+      </div>
+      <p class="liten">Sverige og Danmark: vi sender dit hvis nok melder interesse. Pris og frakt får du før du betaler.</p>
+    </fieldset>
+    <div class="felt"><label class="t" for="antall">Antall pakker</label><input type="number" id="antall" name="antall" min="1" max="20" value="1" required></div>
     <div class="felt"><label class="t" for="navn">Navn</label><input type="text" id="navn" name="navn" autocomplete="name" required></div>
     <div class="felt"><label class="t" for="epost">E-post</label><input type="email" id="epost" name="epost" autocomplete="email" required></div>
     <button type="submit">Forhåndsbestill</button>
@@ -93,8 +112,8 @@
   document.getElementById('bestill').addEventListener('submit', function (e) {
     e.preventDefault();
     const f = new FormData(this);
-    const tekst = `Forhåndsbestilling\n\nFarge: ${f.get('farge')}\nStørrelse: ${f.get('str')}\nAntall: ${f.get('antall')}\nNavn: ${f.get('navn')}\nE-post: ${f.get('epost')}`;
-    location.href = 'mailto:magnus@lettmateriell.no?subject=' + encodeURIComponent(`Forhåndsbestilling ${f.get('farge')} ${f.get('str')} x${f.get('antall')}`) + '&body=' + encodeURIComponent(tekst);
+    const tekst = `Forhåndsbestilling\n\nPakke: ${f.get('pakke')}\nFarge: ${f.get('farge')}\nStørrelse: ${f.get('str')}\nAntall: ${f.get('antall')}\nLand: ${f.get('land')}\nNavn: ${f.get('navn')}\nE-post: ${f.get('epost')}`;
+    location.href = 'mailto:magnus@lettmateriell.no?subject=' + encodeURIComponent(`Forhåndsbestilling ${f.get('land')} ${f.get('farge')} ${f.get('str')} x${f.get('antall')}`) + '&body=' + encodeURIComponent(tekst);
     document.getElementById('takk').style.display = 'block';
   });
 </script>
